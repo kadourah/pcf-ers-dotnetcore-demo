@@ -4,7 +4,7 @@ applications:
   memory: 768M
   instances: 1
   random-route: true
-  path: ./website
+  path: .\website\
   buildpacks:
       - https://github.com/cloudfoundry/dotnet-core-buildpack.git#v2.3.1
   services: []
