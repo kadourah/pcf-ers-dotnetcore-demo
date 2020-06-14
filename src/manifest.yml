@@ -6,7 +6,6 @@ applications:
   random-route: true
   buildpacks:
       - https://github.com/cloudfoundry/dotnet-core-buildpack.git#v2.3.1
-  path: .\publish\
   services: []
   env:
     SKIP_SSL_VALIDATION: "true"
