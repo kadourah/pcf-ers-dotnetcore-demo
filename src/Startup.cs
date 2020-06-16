@@ -21,6 +21,8 @@ using Steeltoe.Management.Endpoint;
 using Steeltoe.Management.Endpoint.Env;
 using Steeltoe.Management.Hypermedia;
 using Steeltoe.Management.Tracing;
+using Steeltoe.Management.Exporter.Tracing;
+using Steeltoe.Management.Endpoint.Metrics;
 
 namespace Articulate
 {
@@ -50,7 +52,11 @@ namespace Articulate
             services.AddEnvActuator(Configuration);
             services.AddScoped<AppEnv>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddPrometheusActuator(Configuration);
+            services.AddMetricsActuator(Configuration);
             services.AddDistributedTracing(Configuration);
+            services.AddZipkinExporter(Configuration);
+
             services.AddDbContext<AttendeeContext>(options =>
             {
                 if (_isMySqlServiceBound)
