@@ -86,7 +86,9 @@ namespace Articulate
             app.UseFileServer();
             app.UseEnvActuator();
             app.UseCloudFoundryActuators(MediaTypeVersion.V2,ActuatorContext.ActuatorAndCloudFoundry);
-
+            app.UsePrometheusActuator();
+            app.UseMetricsActuator();
+            app.UseTracingExporter();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
