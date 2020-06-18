@@ -70,7 +70,7 @@ namespace Articulate
                 services.AddMySqlConnection(Configuration);
             }
             
-            services.AddDiscoveryClient(Configuration);
+           // services.AddDiscoveryClient(Configuration);
             return services.BuildServiceProvider(false);
         }
 
@@ -97,7 +97,7 @@ namespace Articulate
             });
             app.EnsureMigrationOfContext<AttendeeContext>();
             
-            app.UseDiscoveryClient();
+         //   app.UseDiscoveryClient();
         }
         
     }
