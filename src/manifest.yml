@@ -7,6 +7,7 @@ applications:
       - https://github.com/cloudfoundry/dotnet-core-buildpack.git#v2.3.1
   services: []
   routes:
+  - route: ers.apps.internal
   - route: ers.apps.kadourah.com
   env:
     SKIP_SSL_VALIDATION: "true"
