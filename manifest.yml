@@ -1,0 +1,13 @@
+---
+applications:
+- name: ers
+  memory: 768M
+  instances: 1
+  buildpacks:
+      - https://github.com/cloudfoundry/dotnet-core-buildpack.git#v2.3.1
+  services: []
+  routes:
+  - route: ers.apps.internal
+  - route: ers.apps.kadourah.com
+  env:
+    SKIP_SSL_VALIDATION: "true"
